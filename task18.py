@@ -20,10 +20,13 @@ difference=abs(list[0]-x)
 for i in range(1,n):
     if abs(list[i]-x)<difference and list[i]!=x:
         max=list[i]
-        difference=list[i]-x
-        uniq.clear
+        difference=abs(list[i]-x)
+        
+        uniq.clear()
         uniq.add(max)
     elif  abs(list[i]-x)==difference and list[i]!=x:
-        uniq.add(max)
-print(f"Самое близкое число к {x} = {uniq}")
+        uniq.add(list[i])
+        
+print(f"Самые близкие числa к {x} :")
+print(*uniq)
 

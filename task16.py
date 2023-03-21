@@ -26,11 +26,12 @@ print(list)
 print(f"Число {x} встречается в массиве {counter} раз/а")
 list2=list.copy()
 counter2=0
-for i in range(n):
-    number=len(str(abs(list2[i])))
-   # print(number)
-    for j in range(number):
-        temp=str(abs(list2[i]))
-        if str(x) ==temp[j]:
-            counter2+=1
+x_str = str(x)
+for num in list2:
+    num_str = str(num)
+    if x_str in num_str:
+        # print(number)
+        for elem in num_str:
+            if x_str == elem:
+                counter2+=1
 print(f"Цифра {x} встречается в массиве {counter2} раз/а")

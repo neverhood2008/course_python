@@ -23,12 +23,18 @@ value_english={1:['A','E','I','O','U','L','N','S','T','R'],2:['D', 'G'],3:[ 'B',
 value_russian={1:['А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'], 2:[ 'Д', 'К', 'Л', 'М', 'П', 'У'],3:[ 'Б', 'Г', 'Ё', 'Ь', 'Я'],
                            4:['Й', 'Ы'], 5:['Ж', 'З', 'Х', 'Ц', 'Ч'],8:['Ш', 'Э', 'Ю' ], 10:['Ф', 'Щ', 'Ъ']}
 sum=0
+#value_english.update(value_russian)
+print(value_english)
+
 for i in range(len(word)):
     for key in value_english :
         if word[i] in value_english[key]:
             sum=sum+key
-    for key in value_russian :
-        if word[i] in value_russian[key]:
-            sum=sum+key
+    if sum==0:
+        
+      for key in value_russian :
+          if word[i] in value_russian[key]:
+              sum=sum+key
 print(f"Стоимость введеного слова = {sum}")
+
 

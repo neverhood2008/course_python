@@ -1,3 +1,13 @@
+"""
+Задача №43. Решение в группах
+Дан список чисел. Посчитайте, сколько в нем пар
+элементов, равных друг другу. Считается, что любые
+два элемента, равные друг другу образуют одну пару,
+которую необходимо посчитать. Вводится список
+чисел. Все числа списка находятся на разных
+строках.
+"""
+"""
 array1 = [int(i) for i in input().split()]
 
 print(array1)
@@ -8,3 +18,14 @@ for i in range(len(array1)-1):
             count += 1
 
 print(count)
+"""
+
+list_num = input('Введите список чисел: ').split()     
+counter = 0     
+for i in range(len(list_num) - 1):  
+    num = list_num[i + 1:].count(list_num[i])   
+    print(num)
+    print(list_num[i+1:])
+    
+    counter += num    
+print(f'Количество пар элементов: {counter}')

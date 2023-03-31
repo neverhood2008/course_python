@@ -6,8 +6,7 @@
 """
 def progression(first_element,diff,count_elements):
     list=[]
-    list.append(first_element)
-    for i in range(2,count_elements+1):
+    for i in range(1,count_elements+1):
         list.append(first_element+(i-1)*diff)
     return list    
 

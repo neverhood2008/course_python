@@ -14,18 +14,21 @@
 
 def count_str(list_1):
     counter=[]
-    for i in list_1:
+    
+    for phrase in list_1:
         count1=0
-        for j in i:
-            if j in russian_alphabet:
+        for letter in phrase:
+            if letter in russian_alphabet:
                 count1+=1
         counter.append(count1)
+        
        
     return counter
 result=input("Введите строку ").lower().split()
 print(result)
 russian_alphabet={"а", "я", "у", "ю", "о", "е", "ё", "э", "и", "ы"}
-print(count_str(result))
+result=count_str(result)
+print(result)
 result=set(result)
 if len(result)==1:
     print("рифма есть")
@@ -33,13 +36,13 @@ else :
      print("рифмы нет")
 
 #2способ
-
+# пара-ра-рам рам-пам-папам па-ра-па-дам 
 def rifma(result):
-    list_counter=[]
-    for i in result:
-        a=i
-        temp=list(filter(lambda symbol1 : symbol1 in russian_alphabet,list(i)))
-        sum_v=len(temp) 
+    list_counter=[] #[4,4,4]
+    for phrase in result: # prase = 'пара-ра-рам' 
+        
+        temp=list(filter(lambda symbol1 : symbol1 in russian_alphabet,phrase)) # [а,а,а,а]
+        sum_v=len(temp)  # 4
         list_counter.append(sum_v)
     print(list_counter)
     list_counter=set(list_counter)

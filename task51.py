@@ -25,3 +25,16 @@ if same_by(lambda x: x % 2, values):
 	print("same")
 else:
 	print("different")
+	
+
+def same_by(characteristic, objects):     
+    spisok=list(map(characteristic,objects))    
+    print(spisok)    
+    check=set(spisok)    
+    print(check)    
+    return len(check) < 2     
+values = [1, 3, 5, 9, 7]              
+if same_by(lambda x: x % 2, values):
+	print("same")
+else:   
+    print("different")
